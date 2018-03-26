@@ -36,3 +36,9 @@ npm install
   ```bash
   npm run watch
   ```
+
+## Swagger documentation
+
+* [swagger-jsdoc](https://www.npmjs.com/package/swagger-jsdoc) module enables to integrate Swagger using JSDoc comments in code. Setup instructions can be found here - [Getting started](https://github.com/Surnet/swagger-jsdoc/blob/HEAD/docs/GETTING-STARTED.md).
+
+* [koa2-swagger-ui](https://www.npmjs.com/package/koa2-swagger-ui) allows you to host swagger ui from swagger-jsdoc output.
