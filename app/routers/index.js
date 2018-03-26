@@ -1,6 +1,9 @@
 import compose from 'koa-compose';
+import utils from './utils.js';
 
-const routers = [];
+const routers = [
+    utils
+];
 
 const middleware = [];
 routers.forEach((router) => {

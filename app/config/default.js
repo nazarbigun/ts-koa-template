@@ -5,8 +5,13 @@ const config = {
   development: {
     server: {
       port
+    },
+    db: {},
+    swagger: {
+      route: '/docs',
+      apis: ['../routers/*.js'],
+      specRoute: '/docs/swagger.json'
     }
-    db: {}
   }
 };
 
