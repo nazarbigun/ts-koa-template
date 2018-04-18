@@ -1,5 +1,5 @@
-import path from 'path';
-import swaggerJsdoc from 'swagger-jsdoc';
+import * as path from 'path';
+import * as swaggerJsdoc from 'swagger-jsdoc';
 
 export const utilsCtrl = {
   createSpec(ctx) {
