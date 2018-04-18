@@ -11,11 +11,11 @@
         ]
     },
     "include": [
-        "./app/**/*.ts"
+      "./server/**/*.ts"
     ],
     "exclude": [
         "node_modules",
-        "./app/**/*.spec.ts"
+      "./server/**/*.spec.ts"
     ],
     "typeRoots": [
         "./node_modules/@types"

@@ -1,5 +1,5 @@
 import * as Router from 'koa-router';
-import {getData} from '../controllers/mongo';
+import { getData } from '../controllers/mongo';
 
 const mongoRouter: Router = new Router();
 

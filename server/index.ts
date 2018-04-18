@@ -1,8 +1,12 @@
 import * as Koa from 'koa';
 import * as bodyParser from 'koa-bodyparser';
 import * as koaSwagger from 'koa2-swagger-ui';
+
 import routers from './routers/index';
-import config from './config/default';
+import config from './core/config/default';
+import { mssqlConnect } from './instances/sequelize';
+import logger from './core/logger/app-logger';
+import { mongooseConnect } from './instances/mongoose';
 
 const app = new Koa();
 
@@ -23,5 +27,8 @@ app.use(bodyParser({
     }))
     .use(routers);
 
+// connect to dbs
+mssqlConnect();
+mongooseConnect();
 
-app.listen(config.server.port, () => console.log(`API Server started on port ${config.server.port}`));
+app.listen(config.server.port, () => logger.info(`Server started on port ${config.server.port}`));

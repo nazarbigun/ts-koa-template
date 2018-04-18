@@ -18,7 +18,7 @@ export const utilsCtrl = {
           }
         }
       },
-      apis: [path.join(process.cwd(), 'app/routers/**/*.js')] // Path to the API docs
+      apis: [path.join(process.cwd(), 'server/routers/**/*.js')] // Path to the API docs
     };
     ctx.body = swaggerJsdoc(options);
   },

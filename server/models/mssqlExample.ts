@@ -1,5 +1,5 @@
 import * as Sequelize from 'sequelize';
-import { sequelize } from '../controllers/mssql';
+import { sequelize } from '../instances/sequelize';
 
 export const User = sequelize.define('user', {
     firstName: {
