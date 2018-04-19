@@ -3,35 +3,41 @@ A template project for a nodejs API
 ***
 ## Setting up
 
-Clone this repo, remove `.git` and `examples` directory. Then initialize new git repository and install modules:
+Clone this repo, remove `.git` directory. Then initialize new git repository and install modules:
 ```bash
 npm install
 ```
 
 ## Directory structure
 
-* `app`: the source for the app goes here.
-  * `routers`: API endpoints go here, and are automatically loaded at startup.
-  * `middlewares`: custom app middlewares.
+* `server`: the source for the app goes here.
   * `controllers`: application controllers.
+  * `core`: contains application config and base utils like logger.
+    * `config`: application config. You can put configuration for different environments here.
+    * `logger`: application logger. You can configure it to different environments.
+  * `instances`: contains instances of db connectors.
+  * `middlewares`: custom app middlewares.
   * `models`: application models for communication with database.
-  * `config`: application config. You can put configuration for different environments here.
+  * `routers`: API endpoints go here, and are automatically loaded at startup.
+* `static`: folder containing static files which are served by `koa-static` 
 
 ## Database client
-  To add database client to your application you can use any available npm module. For example:
+  There are two example db clients available: 
   * [mongoose](https://www.npmjs.com/package/mongoose) for MongoDB
-  * [mssql](https://www.npmjs.com/package/mssql) for Microsoft SQL Server
+  * [sequelize](https://www.npmjs.com/package/sequelize) for SQL Server
+ 
+  You can remove them if you don't need to access DB.
 
 ## npm run scripts
-  * Runs the babel CLI to compile the app. Files are emitted to dist/:
+  * Runs the TypeScript compiler to compile the app. Files are emitted to dist/:
   ```bash
-  npm run build
+  npm run compile
   ```
-  * Executes ```build``` and serves files from ```dist/``` directory
+  * Executes ```compile``` and serves files from ```dist/``` directory
   ```bash
   npm run start
   ```
-  * Runs the app in development mode. Uses babel-node to compile code. Also uses nodemon to apply changes automatically.
+  * Runs the app in development mode. Uses nodemon to apply changes automatically.
 
   ```bash
   npm run watch
