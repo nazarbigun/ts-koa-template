@@ -1,7 +1,7 @@
-import * as Sequelize from 'sequelize';
+import { Sequelize } from 'sequelize-typescript';
 import logger from '../core/logger/app-logger';
 
-export const sequelize: Sequelize = new Sequelize('mssql://user:pass@localhost:5432/dbname');
+export const sequelize = new Sequelize('mssql://user:pass@localhost:5432/dbname');
 
 export function mssqlConnect(): void {
     sequelize.authenticate().then(() => {

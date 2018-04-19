@@ -1,5 +1,5 @@
-import * as Router from 'koa-router';
 import utilsCtrl from '../controllers/utils';
+import Router = require('koa-router');
 
 
 const utils = new Router();

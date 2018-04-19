@@ -24,7 +24,7 @@ npm install
 ## Database client
   There are two example db clients available: 
   * [mongoose](https://www.npmjs.com/package/mongoose) for MongoDB
-  * [sequelize](https://www.npmjs.com/package/sequelize) for SQL Server
+  * [sequelize-typescript](https://www.npmjs.com/package/sequelize-typescript) for SQL Server
  
   You can remove them if you don't need to access DB.
 

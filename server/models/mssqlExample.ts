@@ -1,11 +1,10 @@
-import * as Sequelize from 'sequelize';
-import { sequelize } from '../instances/sequelize';
+import { Column, Model, Table } from 'sequelize-typescript';
 
-export const User = sequelize.define('user', {
-    firstName: {
-        type: Sequelize.STRING,
-    },
-    lastName: {
-        type: Sequelize.STRING,
-    },
-});
+@Table
+export class User extends Model<User> {
+    @Column
+    firstName: string;
+
+    @Column
+    lastName: string;
+}

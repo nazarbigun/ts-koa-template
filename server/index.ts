@@ -1,6 +1,6 @@
 import * as Koa from 'koa';
-import * as bodyParser from 'koa-bodyparser';
 import * as koaSwagger from 'koa2-swagger-ui';
+import bodyParser = require('koa-bodyparser');
 
 import routers from './routers/index';
 import config from './core/config/default';
@@ -10,13 +10,7 @@ import { mongooseConnect } from './instances/mongoose';
 
 const app = new Koa();
 
-app.use(bodyParser({
-    enableTypes: ['json'],
-    extendTypes: ['application/json'],
-    onerror: function (err, ctx) {
-        ctx.throw('Body parse error', 422);
-    },
-}))
+app.use(bodyParser())
     .use(koaSwagger({
         routePrefix: config.swagger.route,
         swaggerOptions: {

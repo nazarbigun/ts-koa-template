@@ -1,9 +1,9 @@
-import * as mongoose from 'mongoose';
+import { Schema, model } from 'mongoose';
 
-const schema = new mongoose.Schema({
-    textField: {type: 'string', required: true},
+const schema = new Schema({
+    textField: { type: 'string', required: true },
 }, {
-    collection: 'ExampleCollection'
+    collection: 'ExampleCollection',
 });
 
-export default mongoose.model('ExampleModel', schema);
+export default model('ExampleModel', schema);

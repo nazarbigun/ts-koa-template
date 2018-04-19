@@ -1,23 +1,22 @@
-import * as winston from 'winston';
+import { Logger, transports } from 'winston';
+import { existsSync, mkdirSync } from 'fs';
+import config from '../config/default';
 
 require('winston-daily-rotate-file');
-import config from '../config/default';
-import * as fs from 'fs';
 
 const dir = config.logs.logFileDir;
 
-if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir);
+if (!existsSync(dir)) {
+    mkdirSync(dir);
 }
 
-
-export default new winston.Logger({
+export default new Logger({
     level: 'info',
     transports: [
-        new (winston.transports.Console)({
+        new (transports.Console)({
             colorize: true,
         }),
-        new winston.transports.DailyRotateFile({
+        new transports.DailyRotateFile({
             filename: config.logs.logFileName,
             dirname: config.logs.logFileDir,
             maxsize: 20971520, // 20MB
