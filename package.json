@@ -31,8 +31,6 @@
     "koa2-swagger-ui": "^2.8.0",
     "mineq-service-nodejs-utils": "^1.0.27",
     "mongoose": "^5.0.15",
-    "sequelize": "^4.37.6",
-    "sequelize-typescript": "^0.6.3",
     "swagger-jsdoc": "^1.9.7",
     "tedious": "^2.3.1",
     "tslint": "^5.9.1",
