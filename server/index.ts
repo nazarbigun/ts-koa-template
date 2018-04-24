@@ -4,7 +4,6 @@ import bodyParser = require('koa-bodyparser');
 
 import routers from './routers/index';
 import config from './core/config/default';
-import { mssqlConnect } from './instances/sequelize';
 import logger from './core/logger/app-logger';
 import { mongooseConnect } from './instances/mongoose';
 
@@ -22,7 +21,6 @@ app.use(bodyParser())
     .use(routers);
 
 // connect to dbs
-mssqlConnect();
 mongooseConnect();
 
 app.listen(config.server.port, () => logger.info(`Server started on port ${config.server.port}`));

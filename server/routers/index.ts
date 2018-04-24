@@ -1,12 +1,10 @@
 import utils from './utils';
 import mongoRouter from './mongo';
-import mssqlRouter from './mssql';
 import compose = require('koa-compose');
 
 const routers = [
     utils,
     mongoRouter,
-    mssqlRouter,
 ];
 
 const middleware = [];
