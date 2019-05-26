@@ -5,7 +5,6 @@
   "main": "server/index.ts",
   "scripts": {
     "start": "npm run compile && node dist/index.js",
-    "compile": "tsc",
     "compile-watch": "tsc --watch",
     "watch": "nodemon server/index.ts",
     "test": "jest --coverage",
@@ -29,7 +28,6 @@
     "koa-compose": "^4.0.0",
     "koa-router": "^7.4.0",
     "koa2-swagger-ui": "^2.8.0",
-    "mineq-service-nodejs-utils": "^1.0.27",
     "mongoose": "^5.0.15",
     "swagger-jsdoc": "^1.9.7",
     "tedious": "^2.3.1",
